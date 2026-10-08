@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header"><h5 class="mb-0">Ajouter un avion</h5></div>
+    <div class="card-body">
+      <form (ngSubmit)="addAvion()">
+        <div class="mb-3">
+          <label class="form-label">Modele</label>
+          <input type="text" class="form-control" name="modele" [(ngModel)]="newAvion.modele" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Compagnie</label>
+          <input type="text" class="form-control" name="compagnie" [(ngModel)]="newAvion.compagnie" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Capacite</label>
+          <input type="number" class="form-control" name="capacite" [(ngModel)]="newAvion.capacite" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date de mise en service</label>
+          <input type="date" class="form-control" name="dateMiseEnService" [(ngModel)]="dateMiseEnServiceStr" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
+    </div>
+  </div>
+</div>

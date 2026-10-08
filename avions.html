@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="card shadow mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">Liste des avions</h5>
+      <a class="btn btn-primary btn-sm" routerLink="/add-avion">Ajouter un avion</a>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Modele</th>
+            <th>Compagnie</th>
+            <th>Capacite</th>
+            <th>Date de mise en service</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (j of avions; track j.idAvion) {
+            <tr>
+              <td>{{ j.idAvion }}</td>
+              <td>{{ j.modele }}</td>
+              <td>{{ j.compagnie }}</td>
+              <td>{{ j.capacite }}</td>
+              <td>{{ j.dateMiseEnService | date: 'dd/MM/yyyy' }}</td>
+              <td>
+                <a class="btn btn-info btn-sm me-2" [routerLink]="['/consulter-avion', j.idAvion]">Consulter</a>
+                <a class="btn btn-success btn-sm me-2" [routerLink]="['/update-avion', j.idAvion]">Modifier</a>
+                <button class="btn btn-danger btn-sm" (click)="supprimerAvion(j)">Supprimer</button>
+              </td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="6" class="text-center">Aucun avion</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

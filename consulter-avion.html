@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="card shadow">
+    <div class="card-header"><h5 class="mb-0">Details de l'avion</h5></div>
+    <div class="card-body">
+      @if (avion) {
+        <p><b>ID :</b> {{ avion.idAvion }}</p>
+        <p><b>Modele :</b> {{ avion.modele }}</p>
+        <p><b>Compagnie :</b> {{ avion.compagnie }}</p>
+        <p><b>Capacite :</b> {{ avion.capacite }}</p>
+        <p><b>Date de mise en service :</b> {{ avion.dateMiseEnService | date: 'dd/MM/yyyy' }}</p>
+      } @else {
+        <p>Avion introuvable</p>
+      }
+      <a class="btn btn-secondary" routerLink="/avions">Retour</a>
+    </div>
+  </div>
+</div>
